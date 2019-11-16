@@ -10,7 +10,10 @@ class Sijon extends CI_Controller {
 
 	public function blog()
 	{
-		$this->load->view('blog');
+		$this->load->model('blog_model');
+		$this->load->helper('text');
+		$data['artikel'] = $this->blog_model->getAll();
+		$this->load->view('blog', $data);
 	}
 
 	public function explorasi()

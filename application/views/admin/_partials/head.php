@@ -14,3 +14,5 @@
 
 <!-- Custom styles for this template-->
 <link href="<?php echo base_url('css/sb-admin.css')?>" rel="stylesheet">
+
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>

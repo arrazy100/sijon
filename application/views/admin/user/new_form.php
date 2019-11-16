@@ -81,7 +81,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Photo</label>
+								<label for="Image">Photo</label>
 								<input class="form-control-file <?php echo form_error('Image') ? 'is-invalid':'' ?>"
 									type="file" name="Image" />
 								<div class="invalid-feedback">

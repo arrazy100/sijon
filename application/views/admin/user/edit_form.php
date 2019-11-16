@@ -91,7 +91,7 @@
 							</div>
 
 							<div class="form-group">
-								<label for="name">Photo</label>
+								<label for="Image">Photo</label>
 								<input class="form-control-file <?php echo form_error('Image') ? 'is-invalid':'' ?>"
 									type="file" name="Image" />
 								<input type="hidden" name="old_image" value="<?php echo $user->Image ?>" />

@@ -9,7 +9,7 @@
 	<div class="collapse navbar-collapse" id="navbar-nav-header">
 		<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#">Explorasi</a>
+				<a class="nav-link" href="<?php echo site_url('explorasi') ?>">Explorasi</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#">Profil</a>

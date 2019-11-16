@@ -12,4 +12,9 @@ class Sijon extends CI_Controller {
 	{
 		$this->load->view('blog');
 	}
+
+	public function explorasi()
+	{
+		$this->load->view('explorasi');
+	}
 }

@@ -32,6 +32,7 @@
 			<h1 class="display-2 mb-4">Explorasi</h1>
 		</div>
 	</div>
+
 	<section id="who-we-are" class="bg-white">
 		<div class="container">
 			<div class="section-content">
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section id="skills" class="bg-white">
 		<div class="container">
 			<div class="section-content pt-0">

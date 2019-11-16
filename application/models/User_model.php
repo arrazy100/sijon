@@ -9,7 +9,7 @@ class User_model extends CI_Model
     public $password;
     public $nama_lengkap;
     public $status;
-    public $image = "default.jpg";
+    public $Image = "default.jpg";
 
     public function rules()
     {
@@ -54,6 +54,7 @@ class User_model extends CI_Model
         $this->password = md5($post["password"]);
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->status = $post["status"];
+        $this->Image = $this->_uploadImage();
         $this->db->insert($this->_table, $this);
     }
 
@@ -66,10 +67,10 @@ class User_model extends CI_Model
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->status = $post["status"];
 
-        if (!empty($_FILES["image"]["username"])) {
-            $this->image = $this->_uploadImage();
+        if (!empty($_FILES["Image"]["name"])) {
+            $this->Image = $this->_uploadImage();
         } else {
-            $this->image = $post["old_image"];
+            $this->Image = $post["old_image"];
         }
 
         $this->db->update($this->_table, $this, array('username' => $post['username']));
@@ -93,7 +94,7 @@ class User_model extends CI_Model
 
         $this->load->library('upload', $config);
 
-        if ($this->upload->do_upload('image')) {
+        if ($this->upload->do_upload('Image')) {
             return $this->upload->data("file_name");
         }
         print_r($this->upload->display_errors());
@@ -104,8 +105,8 @@ class User_model extends CI_Model
     private function _deleteImage($id)
     {
         $user = $this->getById($id);
-        if ($user->image != "default.jpg") {
-	        $filename = explode(".", $user->image)[0];
+        if ($user->Image != "default.jpg") {
+	        $filename = explode(".", $user->Image)[0];
 		    return array_map('unlink', glob(FCPATH."upload/user/$filename.*"));
         }
     }

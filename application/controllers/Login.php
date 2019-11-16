@@ -21,7 +21,7 @@ class Login extends CI_Controller {
             // login berhasil
             $this->session->set_userdata($login);
             if ($login['status'] == 'admin') redirect(site_url('admin'));
-            else redirect(site_url('welcome'));
+            else redirect(site_url('home'));
         } else {
             // login gagal
             $this->session->set_flashdata('gagal', 'Username atau Password Salah!');

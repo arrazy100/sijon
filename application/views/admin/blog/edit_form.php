@@ -70,10 +70,12 @@
 
 							<div class="form-group">
 								<label for="isi_artikel">Isi Artikel*</label>
-								<textarea name="isi_artikel">
+								<textarea name="isi_artikel" class="form-control ckeditor">
 									<?php echo $blog->isi_artikel ?>
 								</textarea>
-								<script>CKEDITOR.replace('isi_artikel');</script>
+								<script>
+									CKEDITOR.replace('isi_artikel');
+								</script>
 							</div>
 
 							<input class="btn btn-success" type="submit" name="btn" value="Save" />

@@ -24,8 +24,8 @@
             <span>Blogs</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="blogDropdown">
-            <a class="dropdown-item" href="<?php echo site_url('admin/blogs/add') ?>">New User</a>
-            <a class="dropdown-item" href="<?php echo site_url('admin/blogs') ?>">List User</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/blogs/add') ?>">New Article</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/blogs') ?>">List Article</a>
         </div>
     </li>
     <li class="nav-item">

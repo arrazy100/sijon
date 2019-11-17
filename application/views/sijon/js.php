@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script src="<?php echo base_url('vendor/bootstrap/popper.min.js')?>"></script>
 <script src="<?php echo base_url('vendor/bootstrap/bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('vendor/select2/select2.min.js')?>"></script>

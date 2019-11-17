@@ -3,11 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 16, 2019 at 05:13 AM
+-- Generation Time: Nov 17, 2019 at 08:30 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -21,6 +21,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `tokobuah`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE `blog` (
+  `id` int(4) NOT NULL,
+  `thumbnail` text NOT NULL,
+  `kategori` varchar(64) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `slug` text NOT NULL,
+  `tanggal_rilis` date NOT NULL,
+  `isi_artikel` text NOT NULL,
+  `penulis` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `thumbnail`, `kategori`, `judul`, `slug`, `tanggal_rilis`, `isi_artikel`, `penulis`) VALUES
+(1, 'amazing-blog-title.jpg', 'Code', 'Amazing Blog Title', 'amazing-blog-title', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p><strong>Hello semua</strong></p>\r\n', 'John Doe'),
+(3, 'amazing-world.jpg', 'World', 'Amazing World', 'amazing-world', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
+(4, 'amazing-soccer.jpg', 'Soccer', 'Amazing Soccer', 'amazing-soccer', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
+(5, 'amazing-class.jpg', 'Class', 'Amazing Class', 'amazing-class', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe');
 
 -- --------------------------------------------------------
 
@@ -70,6 +97,12 @@ INSERT INTO `user` (`email`, `username`, `nama_lengkap`, `password`, `status`, `
 --
 
 --
+-- Indexes for table `blog`
+--
+ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -80,6 +113,16 @@ ALTER TABLE `products`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `blog`
+--
+ALTER TABLE `blog`
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -5,13 +5,13 @@ $(function(){
         transitionEffect: "fade",
         enableAllSteps: true,
         transitionEffectSpeed: 500,
-        onStepChanging: function (event, currentIndex, newIndex) { 
+        onStepChanging: function (event, currentIndex, newIndex) {
             if ( newIndex >= 1 ) {
                 $('.actions ul').addClass('actions-next');
             } else {
                 $('.actions ul').removeClass('actions-next');
             }
-            return true; 
+            return true;
         },
         labels: {
             finish: "Finish",
@@ -19,7 +19,7 @@ $(function(){
             previous: "Back"
         }
     });
-    // Custom Steps 
+    // Custom Steps
     $('.wizard > .steps li a').click(function(){
     	$(this).parent().addClass('checked');
 		$(this).parent().prevAll().addClass('checked');

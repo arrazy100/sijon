@@ -30,7 +30,8 @@ class Sijon extends CI_Controller {
 		$status = $this->session->userdata('status');
         if ($status != 'user') {
             redirect(site_url('login'));
-        }
-		$this->load->view('explorasi_soal');
+		}
+		$data['soal'] = $this->db->query("SELECT * from explorasi WHERE id='TI'")->result();
+		$this->load->view('explorasi_soal', $data);
 	}
 }

@@ -17,9 +17,17 @@
 			<li class="nav-item">
 				<a class="nav-link" href="<?php echo site_url('blog') ?>">Artikel</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="<?php echo site_url('login') ?>">Login</a>
-			</li>
+			<?php
+				$status = $this->session->userdata('username');
+				if (empty($status)) { ?>
+				<li class="nav-item">
+					<a class="nav-link" href="<?php echo site_url('login') ?>">Login</a>
+				</li> <?php } else { ?>
+
+				<li class="nav-item">
+				<a class="nav-link" href="#"><?php echo $status ?></a>
+			</li> <?php }
+			?>
 			<li class="nav-item">
 				<a id="side-search-open" class="nav-link" href="#">
 					<span class="lnr lnr-magnifier"></span>

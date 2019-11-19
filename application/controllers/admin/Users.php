@@ -9,6 +9,11 @@ class Users extends CI_Controller
         parent::__construct();
         $this->load->model("user_model");
         $this->load->library('form_validation');
+
+        $status = $this->session->userdata('status');
+        if ($status != 'admin') {
+            redirect(site_url('login'));
+        }
     }
 
     public function index()

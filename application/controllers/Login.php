@@ -5,6 +5,14 @@ class Login extends CI_Controller {
     {
         parent::__construct();
         $this->load->model("user");
+        $this->load->library('session');
+
+        $status = $this->session->userdata('status');
+        if (!empty($status)) {
+            $this->session->unset_userdata('username');
+            $this->session->unset_userdata('status');
+            $this->session->sess_destroy();
+        }
     }
 
     public function index() {
@@ -19,7 +27,12 @@ class Login extends CI_Controller {
 
         if (!empty($login)) {
             // login berhasil
-            $this->session->set_userdata($login);
+            $log_sess = array(
+                'username' => $login['username'],
+                'status' => $login['status']
+            );
+            $this->session->set_userdata($log_sess);
+
             if ($login['status'] == 'admin') redirect(site_url('admin'));
             else redirect(site_url('home'));
         } else {
@@ -27,6 +40,13 @@ class Login extends CI_Controller {
             $this->session->set_flashdata('gagal', 'Username atau Password Salah!');
             redirect(site_url('login'));
         }
+    }
+
+    public function logout() {
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('status');
+        $this->session->sess_destroy();
+        redirect(site_url('login'));
     }
 }
 ?>

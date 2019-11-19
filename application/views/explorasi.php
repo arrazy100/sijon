@@ -48,7 +48,7 @@
 						<img class="rounded-circle" src="../img/icons/animat-checkmark.gif" alt="Generic placeholder image"
 							width="140" height="140">
 						<h5 class="mb-4">Explorasi Jurusan</h5>
-						<p><a class="btn btn-link" href="#" role="button">Mulai</a></p>
+						<p><a class="btn btn-link" href="<?php echo site_url('explorasi_soal')?>" role="button">Mulai</a></p>
 					</div>
 					<!-- /.col-md-4 col-sm-6  -->
 					<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">

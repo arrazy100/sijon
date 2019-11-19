@@ -10,6 +10,11 @@ class Blogs extends CI_Controller
         $this->load->model("blog_model");
         $this->load->library('form_validation');
         $this->load->helper('text');
+
+        $status = $this->session->userdata('status');
+        if ($status != 'admin') {
+            redirect(site_url('login'));
+        }
     }
 
     public function index()

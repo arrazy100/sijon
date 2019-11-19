@@ -18,6 +18,19 @@ class Sijon extends CI_Controller {
 
 	public function explorasi()
 	{
+		$status = $this->session->userdata('status');
+        if ($status != 'user') {
+            redirect(site_url('login'));
+        }
 		$this->load->view('explorasi');
+	}
+
+	public function explorasi_soal()
+	{
+		$status = $this->session->userdata('status');
+        if ($status != 'user') {
+            redirect(site_url('login'));
+        }
+		$this->load->view('explorasi_soal');
 	}
 }

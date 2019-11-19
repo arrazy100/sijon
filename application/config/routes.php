@@ -57,3 +57,4 @@ $route['login'] = 'login';
 $route['home'] = 'sijon';
 $route['blog'] = 'sijon/blog';
 $route['explorasi'] = 'sijon/explorasi';
+$route['explorasi_soal'] = 'sijon/explorasi_soal';

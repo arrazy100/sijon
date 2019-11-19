@@ -26,7 +26,7 @@
     </div>
 
 	<div class="wrapper" style="margin-top:100px; margin-bottom: 100px;">
-		<form action="">
+		<form id="hitung" method="post" action="<?php echo site_url('')?>">
 			<h1 style="color: white; text-align: center">Soal Simulasi - Teknik Informatika</h1>
 			<div id="wizard">
 				<?php foreach($soal as $s) { ?>
@@ -35,20 +35,20 @@
 				<section>
 					<h5><?php echo $s->nomor.'. '.$s->soal ?></h5>
 					<div class="inputGroup">
-						<input id="radio<?php echo $s->nomor ?>" name="radio" type="radio" />
-						<label for="radio<?php echo $s->nomor ?>"><?php echo $s->jawaban_a ?></label>
+						<input id="a<?php echo $s->nomor ?>" name="radio<?php echo $s->nomor ?>" type="radio" />
+						<label for="a<?php echo $s->nomor ?>"><?php echo $s->jawaban_a ?></label>
 					</div><br>
 					<div class="inputGroup">
-						<input id="radio<?php echo $s->nomor ?>" name="radio" type="radio" />
-						<label for="radio<?php echo $s->nomor ?>"><?php echo $s->jawaban_b ?></label>
+						<input id="b<?php echo $s->nomor ?>" name="radio<?php echo $s->nomor ?>" type="radio" />
+						<label for="b<?php echo $s->nomor ?>"><?php echo $s->jawaban_b ?></label>
 					</div><br>
 					<div class="inputGroup">
-						<input id="radio<?php echo $s->nomor ?>" name="radio" type="radio" />
-						<label for="radio<?php echo $s->nomor ?>"><?php echo $s->jawaban_c ?></label>
+						<input id="c<?php echo $s->nomor ?>" name="radio<?php echo $s->nomor ?>" type="radio" />
+						<label for="c<?php echo $s->nomor ?>"><?php echo $s->jawaban_c ?></label>
 					</div><br>
 					<div class="inputGroup">
-						<input id="radio<?php echo $s->nomor ?>" name="radio" type="radio" />
-						<label for="radio<?php echo $s->nomor ?>"><?php echo $s->jawaban_d ?></label>
+						<input id="d<?php echo $s->nomor ?>" name="radio<?php echo $s->nomor ?>" type="radio" />
+						<label for="d<?php echo $s->nomor ?>"><?php echo $s->jawaban_d ?></label>
 					</div>
 				</section>
 				<?php } ?>

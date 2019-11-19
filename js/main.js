@@ -13,6 +13,10 @@ $(function(){
             }
             return true;
         },
+        onFinished: function (event, currentIndex) {
+            var form = $('#hitung');
+            form.submit();
+        },
         labels: {
             finish: "Finish",
             next: "Continue",

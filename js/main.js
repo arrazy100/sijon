@@ -42,4 +42,3 @@ $(function(){
         $(this).parent().addClass("active");
     });
 });
-

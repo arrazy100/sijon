@@ -12,7 +12,7 @@
 				<a class="nav-link" href="<?php echo site_url('explorasi') ?>">Explorasi</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">Profil</a>
+				<a class="nav-link" href="<?php echo site_url('profil') ?>">Profil</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="<?php echo site_url('blog') ?>">Artikel</a>

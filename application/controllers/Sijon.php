@@ -25,6 +25,18 @@ class Sijon extends CI_Controller {
 		$this->load->view('explorasi');
 	}
 
+	public function profil()
+	{
+		$status = $this->session->userdata('status');
+		$username = $this->session->userdata('username');
+        if ($status != 'user') {
+            redirect(site_url('login'));
+		}
+		$data['user'] = $this->db->query("SELECT nama_lengkap, Image from user WHERE username='".$username."'")->result();
+		$data['profil'] = $this->db->query("SELECT * FROM profil WHERE username='".$username."'")->result();
+		$this->load->view('profil', $data);
+	}
+
 	public function explorasi_soal()
 	{
 		$status = $this->session->userdata('status');
@@ -53,7 +65,10 @@ class Sijon extends CI_Controller {
 				$jml_skor += 0;
 			}
 		}
-		$data['skor'] = $jml_skor / 8 * 10;
-		$this->load->view('skor', $data);
+		$username = $this->session->userdata('username');
+		$this->db->set('skor_pertama', $jml_skor, FALSE);
+		$this->db->where('username', $username);
+		$this->db->update('profil');
+		redirect(site_url('profil'));
 	}
 }

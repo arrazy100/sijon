@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2019 at 06:50 AM
+-- Generation Time: Nov 20, 2019 at 02:05 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -177,6 +177,36 @@ INSERT INTO `products` (`product_id`, `name`, `price`, `image`, `description`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `profil`
+--
+
+CREATE TABLE `profil` (
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jenis_kelamin` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sekolah` varchar(3) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jurusan_pertama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jurusan_kedua` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kampus_pertama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kampus_kedua` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skor_pertama` int(3) NOT NULL DEFAULT 0,
+  `skor_kedua` int(3) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `profil`
+--
+
+INSERT INTO `profil` (`username`, `first_name`, `last_name`, `jenis_kelamin`, `email`, `password`, `sekolah`, `jurusan_pertama`, `jurusan_kedua`, `kampus_pertama`, `kampus_kedua`, `bio`, `skor_pertama`, `skor_kedua`) VALUES
+('tes', 'John', 'Terry', 'Laki-laki', 'tes@gmail.com', '8cb9cacd854fc3ddd88b696e7c20834a', 'SMK', 'Teknik Informatika', 'Teknik Industri', 'Universitas Brawijaya', 'Universitas Negeri Malang', 'ini adalah bio', 68, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -195,7 +225,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`email`, `username`, `nama_lengkap`, `password`, `status`, `Image`) VALUES
 ('petanikode@ladang.com', 'petanikode', 'Petani Kode', 'b4e8279a53da3347d4cad57a1becd40d', 'admin', 'petanikode.jpg'),
-('reza@gmail.com', 'reza123', 'Muhammad Reza', '3ed6e995474bc6dddef7a6fc9b97c965', 'user', 'default.jpg');
+('reza@gmail.com', 'reza123', 'Muhammad Reza', '3ed6e995474bc6dddef7a6fc9b97c965', 'user', 'default.jpg'),
+('tes@gmail.com', 'tes', 'John Terry', '28b662d883b6d76fd96e4ddc5e9ba780', 'user', 'tes.png');
 
 --
 -- Indexes for dumped tables
@@ -212,6 +243,12 @@ ALTER TABLE `blog`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `profil`
+--
+ALTER TABLE `profil`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `user`

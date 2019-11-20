@@ -1918,7 +1918,7 @@ var defaults = $.fn.steps.defaults = {
     onCanceled: function (event) { },
 
     /**
-     * Fires before finishing and can be used to prevent completion by returning `false`.
+     * Fires before finishing and can be used to prevent completion by returning `false`. 
      * Very useful for form validation. 
      *
      * @property onFinishing
@@ -1929,7 +1929,7 @@ var defaults = $.fn.steps.defaults = {
     onFinishing: function (event, currentIndex) { return true; },
 
     /**
-     * Fires after completion.
+     * Fires after completion. 
      *
      * @property onFinished
      * @type Event

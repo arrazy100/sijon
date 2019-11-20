@@ -41,7 +41,7 @@
 
 					<div class="card">
 						<article class="card-body">
-							<a href="" class="float-right btn btn-outline-primary">Sign up</a>
+							<a href="<?php echo site_url('register') ?>" class="float-right btn btn-outline-info">Sign up</a>
 							<h4 class="card-title mb-4 mt-1">Sign in</h4>
 							<p>
 								<a href="" class="btn btn-block btn-outline-info"> <i class="fab fa-twitter"></i>  

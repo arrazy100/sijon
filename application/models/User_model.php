@@ -63,7 +63,7 @@ class User_model extends CI_Model
         $post = $this->input->post();
         $this->username = $post["username"];
         $this->email = $post["email"];
-        $this->password = $post["password"];
+        $this->password = md5($post["password"]);
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->status = $post["status"];
 

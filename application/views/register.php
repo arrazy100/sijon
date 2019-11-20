@@ -26,7 +26,7 @@
 	</div>
 
 	<div class="wrapper" style="margin-bottom: 100px; margin-top: 100px;">
-		<form action="<?php echo site_url('registers/add') ?>" method="post" id="hitung">
+		<form action="<?php echo site_url('registers/add') ?>" method="post" id="hitung" enctype="multipart/form-data">
 			<div id="wizard">
 				<h6><?php echo validation_errors() ?></h6>
 				<!-- SECTION 1 -->

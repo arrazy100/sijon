@@ -20,14 +20,20 @@
 			<?php
 				$status = $this->session->userdata('username');
 				if (empty($status)) { ?>
-				<li class="nav-item">
-					<a class="nav-link" href="<?php echo site_url('login') ?>">Login</a>
-				</li> <?php } else { ?>
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo site_url('login') ?>">Login</a>
+			</li> <?php } else { ?>
 
-				<li class="nav-item">
-				<a class="nav-link" href="#"><?php echo $status ?></a>
-			</li> <?php }
-			?>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					<?php echo $status ?>
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="<?php echo site_url('login') ?>">Logout</a>
+				</div>
+			</li>
+			<?php } ?>
 			<li class="nav-item">
 				<a id="side-search-open" class="nav-link" href="#">
 					<span class="lnr lnr-magnifier"></span>

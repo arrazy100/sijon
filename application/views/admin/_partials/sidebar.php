@@ -28,6 +28,17 @@
             <a class="dropdown-item" href="<?php echo site_url('admin/blogs') ?>">List Article</a>
         </div>
     </li>
+    <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'explorasi' ? 'active': '' ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="explorasiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Explorasi</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="explorasiDropdown">
+            <a class="dropdown-item" href="<?php echo site_url('admin/explorasi/add') ?>">New Jurusan</a>
+            <a class="dropdown-item" href="<?php echo site_url('admin/explorasi') ?>">List Jurusan</a>
+        </div>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-fw fa-cog"></i>

@@ -34,4 +34,26 @@ class Sijon extends CI_Controller {
 		$data['soal'] = $this->db->query("SELECT * from explorasi WHERE id='TI'")->result();
 		$this->load->view('explorasi_soal', $data);
 	}
+
+	public function hitung_skor()
+	{
+		$soal = $this->db->query("SELECT * from explorasi WHERE id='TI'")->result();
+		$jml_skor = 0;
+		foreach ($soal as $s) {
+			if(isset($_POST['radio'.$s->nomor]))
+			{
+				$skor = explode(',', $s->poin);
+				switch($_POST['radio'.$s->nomor]) {
+					case 'a': $jml_skor += $skor[0]; break;
+					case 'b': $jml_skor += $skor[1]; break;
+					case 'c': $jml_skor += $skor[2]; break;
+					case 'd': $jml_skor += $skor[3]; break;
+				}
+			} else {
+				$jml_skor += 0;
+			}
+		}
+		$data['skor'] = $jml_skor / 8 * 10;
+		$this->load->view('skor', $data);
+	}
 }

@@ -27,7 +27,7 @@
     </div>
 
 	<div class="jumbotron jumbotron-single d-flex align-items-center"
-		style="background-image: url(../img/coba.png); background-repeat: no-repeat;">
+		style="background-image: url(<?php echo base_url('img/coba.png') ?>); background-repeat: no-repeat;">
 		<div class="container text-center">
 			<h1 class="display-2 mb-4">Explorasi</h1>
 		</div>
@@ -45,21 +45,21 @@
 
 				<div class="row text-center">
 					<div class="col-md-4 col-sm-6" data-aos="fade-up">
-						<img class="rounded-circle" src="../img/icons/animat-checkmark.gif" alt="Generic placeholder image"
+						<img class="rounded-circle" src="<?php echo base_url('img/icons/animat-checkmark.gif') ?>" alt="Generic placeholder image"
 							width="140" height="140">
 						<h5 class="mb-4">Explorasi Jurusan</h5>
-						<p><a class="btn btn-link" href="<?php echo site_url('explorasi_soal')?>" role="button">Mulai</a></p>
+						<p><a class="btn btn-link" href="<?php echo site_url('explorasi_jurusan')?>" role="button">Mulai</a></p>
 					</div>
 					<!-- /.col-md-4 col-sm-6  -->
 					<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="200">
-						<img class="rounded-circle" src="../img/icons/animat-checkmark.gif" alt="Generic placeholder image"
+						<img class="rounded-circle" src="<?php echo base_url('img/icons/animat-checkmark.gif') ?>" alt="Generic placeholder image"
 							width="140" height="140">
 						<h5 class="mb-4">Explorasi Kampus</h5>
 						<p><a class="btn btn-link" href="#" role="button">Mulai</a></p>
 					</div>
 					<!-- /.col-md-4 col-sm-6  -->
 					<div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="400">
-						<img class="rounded-circle" src="../img/icons/animat-checkmark.gif" alt="Generic placeholder image"
+						<img class="rounded-circle" src="<?php echo base_url('img/icons/animat-checkmark.gif') ?>" alt="Generic placeholder image"
 							width="140" height="140">
 						<h5 class="mb-4">Tanya Mentor</h5>
 						<p><a class="btn btn-link" href="#" role="button">Mulai</a></p>

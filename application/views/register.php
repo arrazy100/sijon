@@ -26,16 +26,16 @@
 	</div>
 
 	<div class="wrapper" style="margin-bottom: 100px; margin-top: 100px;">
-		<form action="<?php echo site_url('registers/add') ?>" method="post" id="hitung" enctype="multipart/form-data">
+		<form action="<?php echo site_url('registers') ?>" method="post" id="hitung" enctype="multipart/form-data">
 			<div id="wizard">
-				<h6><?php echo validation_errors() ?></h6>
 				<!-- SECTION 1 -->
 				<h4></h4>
 				<section>
 					<div class="form-header">
 						<div class="avartar">
 							<a href="#">
-								<img id="avatar" width="146px" height="146px" src="../img/avartar.png" alt="">
+								<img id="avatar" width="146px" height="146px"
+									src="<?php echo base_url('img/avartar.png') ?>" alt="">
 							</a>
 							<div class="avartar-picker">
 								<input type="file" name="gambar" id="gambar-avatar" class="inputfile"
@@ -48,28 +48,47 @@
 						</div>
 						<div class="form-group">
 							<div class="form-holder active">
-								<input type="text" name="first_name" placeholder="Nama Pertama" class="form-control">
+								<input type="text" name="first_name" placeholder="Nama Pertama"
+									class="form-control <?php echo form_error('first_name') ? 'is-invalid':'' ?>">
+								<div class="invalid-feedback">
+									<?php echo form_error('first_name') ?>
+								</div>
 							</div>
 							<div class="form-holder">
-								<input type="text" name="last_name" placeholder="Nama Akhir" class="form-control">
+								<input type="text" name="last_name" placeholder="Nama Akhir"
+									class="form-control <?php echo form_error('last_name') ? 'is-invalid':'' ?>">
+								<div class="invalid-feedback">
+									<?php echo form_error('last_name') ?>
+								</div>
 							</div>
 							<div class="form-holder">
 								<label class="radio-inline"><input type="radio" name="jenis_kelamin" value="Laki-laki"
 										checked>Laki-laki</label>
-								<label class="radio-inline"><input type="radio" name="jenis_kelamin"
-										value="Perempuan">
+								<label class="radio-inline"><input type="radio" name="jenis_kelamin" value="Perempuan">
 									Perempuan</label>
 							</div>
 						</div>
 					</div>
 					<div class="form-holder">
-						<input type="text" name="username" placeholder="Username" class="form-control">
+						<input type="text" name="username" placeholder="Username"
+							class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>">
+						<div class="invalid-feedback">
+							<?php echo form_error('username') ?>
+						</div>
 					</div>
 					<div class="form-holder">
-						<input type="email" name="email" placeholder="Email" class="form-control">
+						<input type="email" name="email" placeholder="Email"
+							class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>">
+						<div class="invalid-feedback">
+							<?php echo form_error('email') ?>
+						</div>
 					</div>
 					<div class="form-holder">
-						<input type="password" name="password" placeholder="buat password" class="form-control">
+						<input type="password" name="password" placeholder="buat password"
+							class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>">
+						<div class="invalid-feedback">
+							<?php echo form_error('password') ?>
+						</div>
 					</div>
 				</section>
 
@@ -78,24 +97,27 @@
 				<section>
 					<div class="grid">
 						<div class="row">
-							<a href="#" class="grid-item" style="background-image: url('../img/tour-guide-bg.jpg');">
+							<a href="#" class="grid-item"
+								style="background-image: url(<?php echo base_url('img/tour-guide-bg.jpg') ?>);">
 								<label class="radio"><input type="radio" name="sekolah" value="SMK" checked>
 									<div class="inner">
-										<img src="../img/tour-guide.png" alt="">
+										<img src="<?php echo base_url('img/tour-guide.png') ?>" alt="">
 										<span>SMK</span>
 									</div>
 							</a>
-							<a href="#" class="grid-item" style="background-image: url('../img/tour-guide-bg.jpg');">
+							<a href="#" class="grid-item"
+								style="background-image: url(<?php echo base_url('img/tour-guide-bg.jpg') ?>);">
 								<label class="radio"><input type="radio" name="sekolah" value="SMA">
 									<div class="inner">
-										<img src="../img/tour-guide.png" alt="">
+										<img src="<?php echo base_url('img/tour-guide.png') ?>" alt="">
 										<span>SMA</span>
 									</div>
 							</a>
-							<a href="#" class="grid-item" style="background-image: url('../img/tour-guide-bg.jpg');">
+							<a href="#" class="grid-item"
+								style="background-image: url(<?php echo base_url('img/tour-guide-bg.jpg') ?>);">
 								<label class="radio"><input type="radio" name="sekolah" value="MA">
 									<div class="inner">
-										<img src="../img/tour-guide.png" alt="">
+										<img src="<?php echo base_url('img/tour-guide.png') ?>" alt="">
 										<span>MA</span>
 									</div>
 							</a>
@@ -108,22 +130,46 @@
 				<section>
 					<div class="form-row">
 						<div class="form-holder">
-							<input type="text" name="jurusan_pertama" placeholder="Pilihan Jurusan Pertama"
-								class="form-control">
+							<label for="jurusan_pertama">Jurusan Pertama</label>
+							<select class="form-control <?php echo form_error('jurusan_pertama') ? 'is-invalid':'' ?>"
+								name="jurusan_pertama">
+								<option value="">Pilih jurusan pertama</option>
+								<?php foreach($jurusan as $j) { ?>
+									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+								<? } ?>
+							</select>
+							<div class="invalid-feedback">
+								<?php echo form_error('jurusan_pertama') ?>
+							</div>
 						</div>
 						<div class="form-holder">
-							<input type="text" name="jurusan_kedua" placeholder="Pilihan Jurusan Kedua"
-								class="form-control">
+							<label for="jurusan_kedua">Jurusan Kedua</label>
+							<select class="form-control <?php echo form_error('jurusan_kedua') ? 'is-invalid':'' ?>"
+								name="jurusan_kedua">
+								<option value="">Pilih jurusan kedua</option>
+								<?php foreach($jurusan as $j) { ?>
+									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+								<? } ?>
+							</select>
+							<div class="invalid-feedback">
+								<?php echo form_error('jurusan_kedua') ?>
+							</div>
 						</div>
 					</div>
 					<div class="form-row">
 						<div class="form-holder">
 							<input type="text" name="kampus_pertama" placeholder="Pilihan Kampus Pertama"
-								class="form-control">
+								class="form-control <?php echo form_error('kampus_pertama') ? 'is-invalid':'' ?>">
+							<div class="invalid-feedback">
+								<?php echo form_error('kampus_pertama') ?>
+							</div>
 						</div>
 						<div class="form-holder">
 							<input type="text" name="kampus_kedua" placeholder="Pilihan Kampus Kedua"
-								class="form-control">
+								class="form-control <?php echo form_error('kampus_kedua') ? 'is-invalid':'' ?>">
+							<div class="invalid-feedback">
+								<?php echo form_error('kampus_kedua') ?>
+							</div>
 						</div>
 				</section>
 			</div>

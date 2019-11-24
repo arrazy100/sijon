@@ -39,10 +39,10 @@
 							<input type="hidden" name="id" value="<?php echo $user->username?>" />
 
 							<div class="form-group">
-								<label for="username">Username*</label>
+								<label for="username">Username</label>
 								<input class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
 									type="text" name="username" placeholder="Username"
-									value="<?php echo $user->username ?>" />
+									value="<?php echo $user->username ?>" readonly="" />
 								<div class="invalid-feedback">
 									<?php echo form_error('username') ?>
 								</div>
@@ -61,8 +61,7 @@
 							<div class="form-group">
 								<label for="password">Password*</label>
 								<input class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
-									type="password" name="password" min="0" placeholder="******"
-									value="<?php echo $user->password ?>" />
+									type="password" name="password" min="0" placeholder="******"/>
 								<div class="invalid-feedback">
 									<?php echo form_error('password') ?>
 								</div>
@@ -82,8 +81,8 @@
 								<label for="price">Status*</label>
 								<select class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>"
 									name="status">
-									<option value="admin">Admin</option>
-									<option value="user">User</option>
+									<option value="admin" <?php if ($user->status == 'admin') { ?> selected <?php } ?>>Admin</option>
+									<option value="user" <?php if ($user->status == 'user') { ?> selected <?php } ?>>User</option>
 								</select>
 								<div class="invalid-feedback">
 									<?php echo form_error('status') ?>

@@ -64,4 +64,14 @@ class Blogs extends CI_Controller
             redirect(site_url('admin/blogs'));
         }
     }
+
+    public function not_exists($x, $judul) {
+        if ($x == $this->input->post($judul)) {
+            if (empty($this->input->post('old_id'))) {
+                $this->form_validation->set_message("not_exists", "{field} is exists");
+                return false;
+            }
+        }
+        return true;
+    }
 }

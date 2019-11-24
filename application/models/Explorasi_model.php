@@ -21,7 +21,7 @@ class Explorasi_model extends CI_Model
         return [
             ['field' => 'id',
             'label' => 'Id',
-            'rules' => 'required'],
+            'rules' => 'required|is_unique[explorasi.id]'],
 
             ['field' => 'jurusan',
             'label' => 'Jurusan',

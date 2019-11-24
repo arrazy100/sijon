@@ -79,6 +79,7 @@ class User_model extends CI_Model
     public function delete($id)
     {
         $this->_deleteImage($id);
+        $this->db->delete('profil', array("username" => $id));
         return $this->db->delete($this->_table, array("username" => $id));
     }
 

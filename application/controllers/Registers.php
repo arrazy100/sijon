@@ -18,12 +18,8 @@ class Registers extends CI_Controller
             $this->session->unset_userdata('username');
             $this->session->unset_userdata('status');
             $this->session->sess_destroy();
-		}
-        $this->load->view("register");
-    }
+        }
 
-    public function add()
-    {
         $register = $this->register_model;
         $validation = $this->form_validation;
         $validation->set_rules($register->rules());
@@ -33,6 +29,34 @@ class Registers extends CI_Controller
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect(site_url('login'));
         }
-        redirect(site_url('register'));
+        $data['jurusan'] = $this->db->query("SELECT jurusan from explorasi GROUP BY id")->result();
+        $this->load->view("register", $data);
+    }
+
+    public function update()
+    {
+        $register = $this->register_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($register->update_rules());
+
+        $username = $this->session->userdata("username");
+
+        if ($validation->run()) {
+            $register->update($username);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            redirect(site_url('profil'));
+        }
+        $data['user'] = $this->db->query("SELECT nama_lengkap, Image from user WHERE username='".$username."'")->result();
+        $data['profil'] = $this->db->query("SELECT * FROM profil WHERE username='".$username."'")->result();
+
+        $this->load->view("profil", $data);
+    }
+
+    public function not_match($x, $y) {
+        if ($x != $this->input->post($y)) {
+            return true;
+        }
+        $this->form_validation->set_message('not_match', '{field} must have different value with {param}');
+        return false;
     }
 }

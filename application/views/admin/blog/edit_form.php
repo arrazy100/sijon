@@ -66,6 +66,7 @@
 								<div class="invalid-feedback">
 									<?php echo form_error('judul') ?>
 								</div>
+								<input type="hidden" name="old_id" value="<?php echo $blog->judul ?>">
 							</div>
 
 							<div class="form-group">

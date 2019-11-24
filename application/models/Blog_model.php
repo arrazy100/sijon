@@ -21,7 +21,7 @@ class Blog_model extends CI_Model
 
             ['field' => 'judul',
             'label' => 'Judul',
-            'rules' => 'required'],
+            'rules' => 'required|callback_not_exists[judul]'],
 
             ['field' => 'isi_artikel',
             'label' => 'Isi Artikel',

@@ -3,11 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2019 at 02:05 PM
+-- Generation Time: Nov 24, 2019 at 09:09 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -44,7 +44,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `thumbnail`, `kategori`, `judul`, `slug`, `tanggal_rilis`, `isi_artikel`, `penulis`) VALUES
-(1, 'amazing-blog-title.jpg', 'Code', 'Amazing Blog Title', 'amazing-blog-title', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p><strong>Hello semua</strong></p>\r\n', 'John Doe'),
+(1, 'amazing-blog-title.jpg', 'Code', 'Amazing Blog Title', 'amazing-blog-title', '2019-11-24', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p><strong>Hello semua</strong></p>\r\n', 'John Doe'),
 (3, 'amazing-world.jpg', 'World', 'Amazing World', 'amazing-world', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
 (4, 'amazing-soccer.jpg', 'Soccer', 'Amazing Soccer', 'amazing-soccer', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
 (5, 'amazing-class.jpg', 'Class', 'Amazing Class', 'amazing-class', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe');
@@ -202,7 +202,7 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`username`, `first_name`, `last_name`, `jenis_kelamin`, `email`, `password`, `sekolah`, `jurusan_pertama`, `jurusan_kedua`, `kampus_pertama`, `kampus_kedua`, `bio`, `skor_pertama`, `skor_kedua`) VALUES
-('tes', 'John', 'Terry', 'Laki-laki', 'tes@gmail.com', '8cb9cacd854fc3ddd88b696e7c20834a', 'SMK', 'Teknik Informatika', 'Teknik Industri', 'Universitas Brawijaya', 'Universitas Negeri Malang', 'ini adalah bio', 68, 0);
+('john', 'John', 'Terry', 'Laki-laki', 'tes@gmail.com', '8cb9cacd854fc3ddd88b696e7c20834a', 'SMK', 'Teknik Informatika', 'Akuntansi', 'Universitas Brawijaya', 'Universitas Negeri Malang', 'Halo namaku John, aku masih duduk di kelas 2 SMK Banjarbaru, Aku ingin sekali kuliah di Universitas Brawijaya.', 23, 46);
 
 -- --------------------------------------------------------
 
@@ -224,9 +224,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `username`, `nama_lengkap`, `password`, `status`, `Image`) VALUES
-('petanikode@ladang.com', 'petanikode', 'Petani Kode', 'b4e8279a53da3347d4cad57a1becd40d', 'admin', 'petanikode.jpg'),
-('reza@gmail.com', 'reza123', 'Muhammad Reza', '3ed6e995474bc6dddef7a6fc9b97c965', 'user', 'default.jpg'),
-('tes@gmail.com', 'tes', 'John Terry', '28b662d883b6d76fd96e4ddc5e9ba780', 'user', 'tes.png');
+('john@gmail.com', 'john', 'John Terry', '6e0b7076126a29d5dfcbd54835387b7b', 'user', '.jpg'),
+('petanikode@ladang.com', 'petanikode', 'Petani Kode', 'b4e8279a53da3347d4cad57a1becd40d', 'admin', 'petanikode.jpg');
 
 --
 -- Indexes for dumped tables

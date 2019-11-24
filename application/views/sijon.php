@@ -30,16 +30,16 @@
         <div class="circle-2"></div>
         <div class="circle-3"></div>
         <div class="triangle triangle-1">
-            <img src="../img/obj_triangle.png" alt="">
+            <img src="<?php echo base_url('img/obj_triangle.png') ?>" alt="">
         </div>
         <div class="triangle triangle-2">
-            <img src="../img/obj_triangle.png" alt="">
+            <img src="<?php echo base_url('img/obj_triangle.png') ?>" alt="">
         </div>
         <div class="triangle triangle-3">
-            <img src="../img/obj_triangle.png" alt="">
+            <img src="<?php echo base_url('img/obj_triangle.png') ?>" alt="">
         </div>
         <div class="triangle triangle-4">
-            <img src="../img/obj_triangle.png" alt="">
+            <img src="<?php echo base_url('img/obj_triangle.png') ?>" alt="">
         </div>
     </div>
 
@@ -104,7 +104,7 @@
 
     <!-- Testimonial Section-->
     <section id="testimonial" class="section-padding bg-fixed bg-white overlay"
-        style="background-image: url(../img/bg-white.jpg);">
+        style="background-image: url(<?php echo base_url('img/bg-white.jpg') ?>);">
         <div class="container">
             <div class="section-content" data-aos="fade-up">
                 <div class="heading-section text-center">
@@ -121,7 +121,7 @@
                                 harus disesuaikan saat ambil jurusan kuliah nanti. </h4>
                             <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                                 <div class="testi-img mr-2">
-                                    <img src="../img/testi-1.jpg" alt="">
+                                    <img src="<?php echo base_url('img/testi-1.jpg') ?>" alt="">
                                 </div>
                                 <div class="testi-details">
                                     <p class="testi-author mb-0 font-weight-bolder">Adinda Putri Yasmin</p>
@@ -136,7 +136,7 @@
                                 Dan hasil yang diberikan sangat mendetail.</h4>
                             <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                                 <div class="testi-img mr-2">
-                                    <img src="../img/testi-2.jpg" alt="">
+                                    <img src="<?php echo base_url('img/testi-2.jpg') ?>" alt="">
                                 </div>
                                 <div class="testi-details">
                                     <p class="testi-author mb-0 font-weight-bolder">Intan Yuntia</p>
@@ -150,7 +150,7 @@
                                 jurusan</h4>
                             <div class="testi-meta-inner d-flex justify-content-center align-items-center">
                                 <div class="testi-img mr-2">
-                                    <img src="../img/testi-3.jpg" alt="">
+                                    <img src="<?php echo base_url('img/testi-3.jpg') ?>" alt="">
                                 </div>
                                 <div class="testi-details">
                                     <p class="testi-author mb-0 font-weight-bolder">Glori</p>
@@ -168,7 +168,7 @@
     <!-- Portfolio Section -->
 
 
-    <section id="cta" class="bg-fixed overlay" style="background-image: url(../img/background.jpeg);">
+    <section id="cta" class="bg-fixed overlay" style="background-image: url(<?php echo base_url('img/background.jpeg') ?>);">
         <div class="container">
             <div class="section-content" data-aos="fade-up">
                 <div class="row">

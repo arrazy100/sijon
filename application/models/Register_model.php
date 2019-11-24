@@ -15,6 +15,8 @@ class Register_model extends CI_Model
     public $jurusan_kedua;
     public $kampus_pertama;
     public $kampus_kedua;
+    public $skor_pertama = 0;
+    public $skor_kedua = 0;
     public $bio = "ini adalah bio";
 
     public function rules()
@@ -30,31 +32,52 @@ class Register_model extends CI_Model
 
             ['field' => 'email',
             'label' => 'Email',
-            'rules' => 'required'],
+            'rules' => 'required|is_unique[profil.email]|is_unique[user.email]'],
 
             ['field' => 'username',
             'label' => 'Username',
-            'rules' => 'required'],
+            'rules' => 'required|is_unique[profil.username]|is_unique[user.username]'],
 
             ['field' => 'password',
             'label' => 'Password',
             'rules' => 'required'],
 
             ['field' => 'jurusan_pertama',
-            'label' => 'Jurusan_Pertama',
+            'label' => 'Jurusan Pertama',
             'rules' => 'required'],
 
             ['field' => 'jurusan_kedua',
-            'label' => 'Jurusan_Kedua',
-            'rules' => 'required'],
+            'label' => 'Jurusan Kedua',
+            'rules' => 'required|callback_not_match[jurusan_pertama]'],
 
             ['field' => 'kampus_pertama',
-            'label' => 'Kampus_Pertama',
+            'label' => 'Kampus Pertama',
             'rules' => 'required'],
 
             ['field' => 'kampus_kedua',
-            'label' => 'Kampus_Kedua',
-            'rules' => 'required']
+            'label' => 'Kampus Kedua',
+            'rules' => 'required|callback_not_match[kampus_pertama]']
+        ];
+    }
+
+    public function update_rules()
+    {
+        return [
+            ['field' => 'jurusan_pertama',
+            'label' => 'Jurusan Pertama',
+            'rules' => 'required'],
+
+            ['field' => 'jurusan_kedua',
+            'label' => 'Jurusan Kedua',
+            'rules' => 'required|callback_not_match[jurusan_pertama]'],
+
+            ['field' => 'kampus_pertama',
+            'label' => 'Kampus Pertama',
+            'rules' => 'required'],
+
+            ['field' => 'kampus_kedua',
+            'label' => 'Kampus Kedua',
+            'rules' => 'required|callback_not_match[kampus_pertama]']
         ];
     }
 
@@ -83,6 +106,51 @@ class Register_model extends CI_Model
             'Image' => $this->_uploadImage()
         );
         $this->db->insert('user', $user);
+    }
+
+    public function update($username)
+    {
+        $post = $this->input->post();
+
+        $pertama = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_pertama='".$post["jurusan_pertama"]."'");
+        if (empty($pertama->result())) {
+            $this->skor_pertama = 0;
+        } else {
+            $this->skor_pertama = $pertama->result()[0]->skor_pertama;
+        }
+
+        $kedua = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_kedua='".$post["jurusan_kedua"]."'");
+        if (empty($kedua->result())) {
+            $this->skor_kedua = 0;
+        } else {
+            $this->skor_kedua = $kedua->result()[0]->skor_kedua;
+        }
+
+        $up = array(
+            'jurusan_pertama' => $post['jurusan_pertama'],
+            'jurusan_kedua' => $post['jurusan_kedua'],
+            'kampus_pertama' => $post['kampus_pertama'],
+            'kampus_kedua' => $post['kampus_kedua'],
+            'skor_pertama' => $this->skor_pertama,
+            'skor_kedua' => $this->skor_kedua,
+            'bio' => $post['bio']
+        );
+
+        $this->db->update($this->_table, $up, array('username' => $username));
+
+        $new_gambar = "";
+        if (!empty($_FILES["gambar"]["name"])) {
+            $new_gambar = $this->_uploadImage();
+        } else {
+            $new_gambar = $post["old_image"];
+        }
+
+        $user = array(
+            'email' => $post['email'],
+            'Image' => $new_gambar
+        );
+
+        $this->db->update('user', $user, array('username' => $username));
     }
 
     private function _uploadImage()

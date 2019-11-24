@@ -26,7 +26,7 @@
     </div>
 
 	<div class="wrapper" style="margin-top:100px; margin-bottom: 100px;">
-		<form id="hitung" method="post" action="<?php echo site_url('sijon/hitung_skor')?>">
+		<form id="hitung" method="post" action="<?php echo site_url('sijon/hitung_skor')?>?jurusan=<?php echo $id_skor ?>">
 			<h1 style="color: white; text-align: center">Soal Simulasi - Teknik Informatika</h1>
 			<div id="wizard">
 				<?php foreach($soal as $s) { ?>

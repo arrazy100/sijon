@@ -27,7 +27,7 @@
 	</div>
 
 	<div class="jumbotron jumbotron-single d-flex align-items-center"
-		style="background-image: url(../img/coba.png); background-repeat: no-repeat;">
+		style="background-image: url(<?php echo base_url('img/coba.png') ?>); background-repeat: no-repeat;">
 		<div class="container text-center">
 			<h1 class="display-2 mb-4">Login</h1>
 		</div>
@@ -41,7 +41,7 @@
 
 					<div class="card">
 						<article class="card-body">
-							<a href="<?php echo site_url('register') ?>" class="float-right btn btn-outline-info">Sign up</a>
+							<a href="<?php echo site_url('registers') ?>" class="float-right btn btn-outline-info">Sign up</a>
 							<h4 class="card-title mb-4 mt-1">Sign in</h4>
 							<p>
 								<a href="" class="btn btn-block btn-outline-info"> <i class="fab fa-twitter"></i>  

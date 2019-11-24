@@ -111,6 +111,7 @@ class Register_model extends CI_Model
     public function update($username)
     {
         $post = $this->input->post();
+        $this->username = $username;
 
         $pertama = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_pertama='".$post["jurusan_pertama"]."'");
         if (empty($pertama->result())) {

@@ -38,8 +38,8 @@ class Sijon extends CI_Controller {
         if ($status != 'user') {
             redirect(site_url('login'));
 		}
-		$data['user'] = $this->db->query("SELECT nama_lengkap, Image from user WHERE username='".$username."'")->result();
-		$data['profil'] = $this->db->query("SELECT * FROM profil WHERE username='".$username."'")->result();
+		$data['user'] = $this->db->query("SELECT nama_lengkap, Image from user WHERE username='$username'")->result();
+		$data['profil'] = $this->db->query("SELECT * FROM profil WHERE username='$username'")->result();
 		$data['jurusan'] = $this->db->query("SELECT jurusan FROM explorasi GROUP BY id")->result();
 
 		$register = $this->register_model;

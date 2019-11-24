@@ -57,6 +57,7 @@ $route['login'] = 'login';
 $route['register'] = 'registers';
 $route['home'] = 'sijon';
 $route['blog'] = 'sijon/blog';
+$route['chat'] = 'chat';
 $route['explorasi'] = 'sijon/explorasi';
 $route['profil'] = 'sijon/profil';
 $route['explorasi_jurusan'] = 'sijon/explorasi_jurusan';

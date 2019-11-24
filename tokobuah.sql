@@ -3,11 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2019 at 09:09 AM
+-- Generation Time: Nov 24, 2019 at 02:48 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
-SET SQL_MODE = "";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -48,6 +48,30 @@ INSERT INTO `blog` (`id`, `thumbnail`, `kategori`, `judul`, `slug`, `tanggal_ril
 (3, 'amazing-world.jpg', 'World', 'Amazing World', 'amazing-world', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
 (4, 'amazing-soccer.jpg', 'Soccer', 'Amazing Soccer', 'amazing-soccer', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe'),
 (5, 'amazing-class.jpg', 'Class', 'Amazing Class', 'amazing-class', '2019-11-16', '<p>Lorem ipsum dolor sit amet con sectetur adipiscing elit sed do eiu smod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n', 'John Doe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `send_to` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` datetime NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`username`, `send_to`, `date`, `message`) VALUES
+('john', 'arrazy100', '2019-11-24 13:24:58', 'Halo, apakah saya bisa bertanya sesuatu?'),
+('arrazy100', 'john', '2019-11-24 13:28:37', 'Tentu, ada yang bisa saya bantu?'),
+('john', 'arrazy100', '2019-11-24 14:29:38', 'Saya adalah orang yang aktif bersosial, apa jurusan yang cocok untuk saya?\r\nTerima kasih.'),
+('arrazy100', 'john', '2019-11-24 14:43:44', 'Jurusan yang cocok untuk anda adalah:<br>1. Akuntansi<br>2. Ilmu Sosial<br>3. Pendidikan Guru Sekolah Dasar<br><br>Jika ada yang ingin ditanyakan lagi, jangan malu untuk bertanya ya.'),
+('arrazy100', 'john', '2019-11-24 14:46:53', 'Semoga bermanfaat ya');
 
 -- --------------------------------------------------------
 
@@ -224,8 +248,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `username`, `nama_lengkap`, `password`, `status`, `Image`) VALUES
-('john@gmail.com', 'john', 'John Terry', '6e0b7076126a29d5dfcbd54835387b7b', 'user', '.jpg'),
-('petanikode@ladang.com', 'petanikode', 'Petani Kode', 'b4e8279a53da3347d4cad57a1becd40d', 'admin', 'petanikode.jpg');
+('afdhalarrazy111@gmail.com', 'arrazy100', 'Muhammad Afdhal Arrazy', '8569fda77a4acf6dd9b1696a68ea8ed5', 'admin', 'arrazy100.jpg'),
+('tes@gmail.com', 'john', 'John Terry', '6e0b7076126a29d5dfcbd54835387b7b', 'user', 'john.jpg'),
+('nedy@gmail.com', 'nedy', 'Nedy', '220395dc1531fd3f6f7ae6eefdb26541', 'admin', 'Nedy.jpg'),
+('petanikode@ladang.com', 'petanikode', 'Petani Kode', 'b4e8279a53da3347d4cad57a1becd40d', 'admin', 'petanikode.jpg'),
+('rezal@gmail.com', 'rezal', 'Muhammad Rezal', '9946e45d7e5a707875e2f1dd60eb43ca', 'admin', 'rezal.jpg');
 
 --
 -- Indexes for dumped tables

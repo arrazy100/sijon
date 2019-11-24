@@ -40,8 +40,8 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span></a>
+        <a class="nav-link" href="<?php echo site_url('chat') ?>">
+            <i class="fas fa-fw fa-comments"></i>
+            <span>Chats</span></a>
     </li>
 </ul>

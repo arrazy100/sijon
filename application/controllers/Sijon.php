@@ -7,6 +7,7 @@ class Sijon extends CI_Controller {
         parent::__construct();
         $this->load->model("register_model");
 		$this->load->library('form_validation');
+		$this->load->helper('text');
     }
 
 	public function index()
@@ -17,9 +18,14 @@ class Sijon extends CI_Controller {
 	public function blog()
 	{
 		$this->load->model('blog_model');
-		$this->load->helper('text');
 		$data['artikel'] = $this->blog_model->getAll();
 		$this->load->view('blog', $data);
+	}
+
+	public function view_blog($id = null) {
+		$data['blog'] = $this->db->query("SELECT * FROM blog WHERE slug='$id'")->result();
+		if (!$data['blog']) show_404();
+		$this->load->view('single_blog', $data);
 	}
 
 	public function explorasi()
@@ -109,5 +115,27 @@ class Sijon extends CI_Controller {
 		$this->db->where('username', $username);
 		$this->db->update('profil');
 		redirect(site_url('profil'));
+	}
+
+	public function explorasi_kampus() {
+		if (!isset($_GET['query'])) {
+			$data['kampus'] = $this->db->get('kampus')->result();
+		} else {
+			$query = $this->input->get('query');
+			$filter = $_GET['filter'];
+			if ($filter == 'nama') {
+				$this->db->like($filter, $query);
+			} else {
+				$this->db->where($filter, $query);
+			}
+			$data['kampus'] = $this->db->get('kampus')->result();
+		}
+		$this->load->view('explorasi_kampus', $data);
+	}
+
+	public function view_kampus($id = null) {
+		$data['kampus'] = $this->db->query("SELECT * FROM kampus WHERE short_name='$id'")->result();
+		if (!$data['kampus']) show_404();
+		$this->load->view('view_kampus', $data);
 	}
 }

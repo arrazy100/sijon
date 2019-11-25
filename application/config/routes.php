@@ -52,13 +52,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'sijon';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['admin'] = 'admin/overview';
-$route['login'] = 'login';
-$route['register'] = 'registers';
+
 $route['home'] = 'sijon';
 $route['blog'] = 'sijon/blog';
-$route['chat'] = 'chat';
+$route['view_blog/(:any)'] = 'sijon/view_blog/$1';
 $route['explorasi'] = 'sijon/explorasi';
 $route['profil'] = 'sijon/profil';
 $route['explorasi_jurusan'] = 'sijon/explorasi_jurusan';
 $route['explorasi_soal'] = 'sijon/explorasi_soal';
+$route['explorasi_kampus'] = 'sijon/explorasi_kampus';
+$route['view_kampus/(:any)'] = 'sijon/view_kampus/$1';
+
+$route['login'] = 'login';
+$route['register'] = 'registers';
+$route['admin'] = 'admin/overview';
+$route['chat'] = 'chat';
+$route['refresh_chat'] = 'chat/refresh_chat';

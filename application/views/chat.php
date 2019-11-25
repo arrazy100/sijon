@@ -59,7 +59,7 @@
 				</div>
 				<div class="mesgs">
 					<?php if (!empty($_GET['with'])) { ?>
-					<div class="msg_history">
+					<div class="msg_history" id="isi_chat">
 						<?php foreach($chat as $c) { ?>
 						<?php if ($c->username != $this->session->userdata('username')) { ?>
 						<div class="incoming_msg">
@@ -110,12 +110,26 @@
             location.href = "?with=" + $(id).attr("id");
         }
         $('#message').each(function() {
-            this.setAttribute('style', 'height:' + (this.scrollHeight) + "px; overflow-y: hidden; width: 95%;");
+            this.setAttribute('style', 'height:' + (this.scrollHeight) + "px; overflow-y: hidden; width: 95%; resize: none;");
         }).on('input', function() {
             this.style.height = 'auto';
             this.style.height = (this.scrollHeight) + "px";
         });
         $('.msg_history').scrollTop($('.msg_history')[0].scrollHeight);
+
+		$(document).ready(function() {
+			var interval = function() {
+				$.ajax({
+					url: "<?php echo site_url('refresh_chat/?with='.$_GET['with']) ?>",
+            		cache: false,
+            		success: function (html) {
+						$("#isi_chat").empty();
+                		$("#isi_chat").append(html);
+            		}, Timeout: 2000
+				});
+			}
+			setInterval(interval, 2000);
+		});
 	</script>
 </body>
 

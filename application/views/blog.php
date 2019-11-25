@@ -49,7 +49,7 @@
 								<div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
 									<div class="blog-item">
 										<div class="blog-img">
-											<a href="single.html"><img src="<?php echo base_url('upload/blog/'.$artikel->thumbnail) ?>" alt=""></a>
+											<a href="<?php echo site_url('view_blog/').$artikel->slug ?>"><img src="<?php echo base_url('upload/blog/'.$artikel->thumbnail) ?>" alt=""></a>
 										</div>
 										<div class="blog-text">
 											<div class="blog-tag">
@@ -58,7 +58,7 @@
 												</a>
 											</div>
 											<div class="blog-title">
-												<a href="single.html">
+												<a href="<?php echo site_url('view_blog/').$artikel->slug ?>">
 													<h4><?php echo $artikel->judul ?></h4>
 												</a>
 											</div>

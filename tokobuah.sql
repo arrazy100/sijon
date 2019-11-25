@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 24, 2019 at 02:48 PM
+-- Generation Time: Nov 25, 2019 at 12:33 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.8
 
@@ -71,7 +71,40 @@ INSERT INTO `chat` (`username`, `send_to`, `date`, `message`) VALUES
 ('arrazy100', 'john', '2019-11-24 13:28:37', 'Tentu, ada yang bisa saya bantu?'),
 ('john', 'arrazy100', '2019-11-24 14:29:38', 'Saya adalah orang yang aktif bersosial, apa jurusan yang cocok untuk saya?\r\nTerima kasih.'),
 ('arrazy100', 'john', '2019-11-24 14:43:44', 'Jurusan yang cocok untuk anda adalah:<br>1. Akuntansi<br>2. Ilmu Sosial<br>3. Pendidikan Guru Sekolah Dasar<br><br>Jika ada yang ingin ditanyakan lagi, jangan malu untuk bertanya ya.'),
-('arrazy100', 'john', '2019-11-24 14:46:53', 'Semoga bermanfaat ya');
+('arrazy100', 'john', '2019-11-24 14:46:53', 'Semoga bermanfaat ya'),
+('rezal', 'john', '2019-11-24 14:57:03', 'Helo apa kabar'),
+('john', 'arrazy100', '2019-11-25 08:44:19', 'Terima kasih banyak kak atas jawabannya, kayaknya saya lebih ke akuntansi deh'),
+('john', 'petanikode', '2019-11-25 08:45:02', 'Halo apakah anda masih hidup?'),
+('petanikode', 'john', '2019-11-25 08:47:47', 'Tentu saja, ada yang bisa saya bantu?'),
+('john', 'petanikode', '2019-11-25 08:55:31', 'Saya ingin terbang tinggi'),
+('petanikode', 'john', '2019-11-25 09:02:18', 'Apaan?'),
+('john', 'petanikode', '2019-11-25 09:02:56', 'Ayo'),
+('john', 'petanikode', '2019-11-25 09:04:07', 'Tes'),
+('john', 'petanikode', '2019-11-25 09:05:23', 'Hmm'),
+('petanikode', 'john', '2019-11-25 09:10:51', 'Apa?'),
+('petanikode', 'john', '2019-11-25 09:11:51', 'Tes1234'),
+('john', 'petanikode', '2019-11-25 09:14:41', 'Tidak apa'),
+('petanikode', 'john', '2019-11-25 09:16:42', 'tes'),
+('john', 'petanikode', '2019-11-25 09:21:07', 'Tes'),
+('john', 'petanikode', '2019-11-25 09:28:19', 'Halo apakah bisa?'),
+('petanikode', 'john', '2019-11-25 09:31:13', 'Tentu bisa'),
+('john', 'petanikode', '2019-11-25 09:37:29', 'Halo, apa ada orang?'),
+('petanikode', 'john', '2019-11-25 09:38:36', 'Tentu ada'),
+('petanikode', 'john', '2019-11-25 09:39:00', 'Memang kenapa?'),
+('john', 'petanikode', '2019-11-25 09:45:07', 'Tak apa'),
+('petanikode', 'john', '2019-11-25 09:47:34', 'Halo'),
+('john', 'petanikode', '2019-11-25 09:48:35', 'TEs'),
+('petanikode', 'john', '2019-11-25 09:48:58', 'a'),
+('petanikode', 'john', '2019-11-25 09:57:09', 'b'),
+('petanikode', 'john', '2019-11-25 10:06:32', 'c'),
+('john', 'petanikode', '2019-11-25 10:06:44', 'd'),
+('john', 'petanikode', '2019-11-25 10:06:56', 'e'),
+('petanikode', 'john', '2019-11-25 10:07:36', 'f'),
+('john', 'petanikode', '2019-11-25 10:07:41', 'g'),
+('john', 'petanikode', '2019-11-25 10:09:56', 'h'),
+('petanikode', 'john', '2019-11-25 10:10:20', 'i'),
+('petanikode', 'john', '2019-11-25 10:10:48', 'Hai ini adalah pesan yang akan terkirim tanpa perlu refresh halaman'),
+('john', 'petanikode', '2019-11-25 10:10:59', 'Menakjubkan bukan?');
 
 -- --------------------------------------------------------
 
@@ -176,6 +209,36 @@ INSERT INTO `explorasi` (`id`, `jurusan`, `nomor`, `soal`, `jawaban_a`, `jawaban
 ('AK', 'Akuntansi', 18, 'Perkiraan-perkiraan yang harus ditutup dalam jurnal penutupan adalah...', 'Pendapatan diterima dimuka, beban, modal, dan ikhtisar laba/rugi', 'Pendapatan, modal, beban dan ikhtisar laba-rugi', 'Pendapatan diterima dimuka, modal dan ikhtisar laba/rugi', 'Pendapatan diterima dimuka, modal dan ikhtisar laba/rugi', '3,2,4,1'),
 ('AK', 'Akuntansi', 19, 'Sahnya bukti transaksi adalah bukti transaksi yang berisi data tentang:', 'Jumlah uang, nomor bukti, keterangan, pihak yang terlibat', 'Tanggal, jumlah uang, nomor bukti, alamat', 'Tanggal, jumlah uang, nomor bukti, pihak yang terlibat.', 'Tanggal, jumlah uang, keterangan, nomor bukti.', '1,2,4,3'),
 ('AK', 'Akuntansi', 20, 'Suatu kenyataan bahwa kebutuhan selalu lebih besar daripada sarana pemuas kebutuhan merupakan inti dari konsep &hellip;.', 'Kebutuhan pokok', 'Ketergantungan', 'Kelangkaan', 'Sumber daya alam', '1,3,4,2');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kampus`
+--
+
+CREATE TABLE `kampus` (
+  `Num` int(11) NOT NULL,
+  `Nama` varchar(255) NOT NULL,
+  `short_name` varchar(20) NOT NULL,
+  `status` text NOT NULL,
+  `akreditas` text NOT NULL,
+  `tahun` int(10) NOT NULL,
+  `Alamat` text DEFAULT NULL,
+  `Deskripsi` text DEFAULT NULL,
+  `img1` text NOT NULL,
+  `img2` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kampus`
+--
+
+INSERT INTO `kampus` (`Num`, `Nama`, `short_name`, `status`, `akreditas`, `tahun`, `Alamat`, `Deskripsi`, `img1`, `img2`) VALUES
+(1, 'Universitas Negeri Malang', 'UM', 'Negeri', 'A', 1954, 'Jl. Semarang No.5, Sumbersari, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145', '', 'UM1.jpg', 'UM2.jpg'),
+(2, 'Universitas Gadjah Mada', 'UGM', 'Negeri', 'A', 1949, 'Bulaksumur, Caturtunggal, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281', '', 'UM1.jpg', 'UM2.jpg'),
+(3, 'Universitas Indonesia', 'UI', 'Negeri', 'A', 1924, 'Jl. Margonda Raya, Pondok Cina, Kecamatan Beji, Kota Depok, Jawa Barat 16424', '', 'UM1.jpg', 'UM2.jpg'),
+(4, 'Universitas Airlangga', 'UNAIR', 'Negeri', 'A', 1954, 'Jl. Airlangga No.4 - 6, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60115', '', 'UM1.jpg', 'UM2.jpg'),
+(5, 'Universitas Lambung Mangkurat', 'UNLAM', 'Negeri', 'A', 1958, 'Jl. Brigjen H. Hasan Basri, Pangeran, Kec. Banjarmasin Utara, Kota Banjarmasin, Kalimantan Selatan 70123', '', 'UM1.jpg', 'UM2.jpg');
 
 -- --------------------------------------------------------
 

@@ -130,12 +130,13 @@
 				<section>
 					<div class="form-row">
 						<div class="form-holder">
-							<label for="jurusan_pertama">Jurusan Pertama</label>
-							<select class="form-control <?php echo form_error('jurusan_pertama') ? 'is-invalid':'' ?>"
+							<select style="width: 100%;" class="form-control <?php echo form_error('jurusan_pertama') ? 'is-invalid':'' ?>"
 								name="jurusan_pertama">
-								<option value="">Pilih jurusan pertama</option>
+								<option value="">Pilih Jurusan Pertama</option>
 								<?php foreach($jurusan as $j) { ?>
-									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+									<option value="<?php echo $j->jurusan ?>">
+										<?php echo $j->jurusan ?>
+									</option>
 								<?php } ?>
 							</select>
 							<div class="invalid-feedback">
@@ -143,12 +144,13 @@
 							</div>
 						</div>
 						<div class="form-holder">
-							<label for="jurusan_kedua">Jurusan Kedua</label>
-							<select class="form-control <?php echo form_error('jurusan_kedua') ? 'is-invalid':'' ?>"
+							<select style="width: 100%;" class="form-control <?php echo form_error('jurusan_kedua') ? 'is-invalid':'' ?>"
 								name="jurusan_kedua">
-								<option value="">Pilih jurusan kedua</option>
+								<option value="">Pilih Jurusan Pertama</option>
 								<?php foreach($jurusan as $j) { ?>
-									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
+									<option value="<?php echo $j->jurusan ?>">
+										<?php echo $j->jurusan ?>
+									</option>
 								<?php } ?>
 							</select>
 							<div class="invalid-feedback">
@@ -181,8 +183,6 @@
 	</footer>
 
 	<?php $this->load->view("sijon/js.php") ?>
-
-	<script src="<?php echo base_url('js/jquery-3.3.1.min.js') ?>"></script>
 
 	<script type="text/javascript">
 		function readURL(input) {

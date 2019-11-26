@@ -60,38 +60,42 @@ class Blog_model extends CI_Model
 
     public function save()
     {
-        $cur_date = new DateTime();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $cur_date = new DateTime();
 
-        $post = $this->input->post();
-        $this->kategori = $post["kategori"];
-        $this->judul = $post["judul"];
-        $this->slug = $this->create_slug($this->judul);
-        $this->tanggal_rilis = $cur_date->format('Y-m-d');
-        $this->isi_artikel = $post["isi_artikel"];
-        $this->penulis = "John Doe";
-        $this->thumbnail = $this->_uploadImage();
-        $this->db->insert($this->_table, $this);
+            $post = $this->input->post();
+            $this->kategori = $post["kategori"];
+            $this->judul = $post["judul"];
+            $this->slug = $this->create_slug($this->judul);
+            $this->tanggal_rilis = $cur_date->format('Y-m-d');
+            $this->isi_artikel = $post["isi_artikel"];
+            $this->penulis = "John Doe";
+            $this->thumbnail = $this->_uploadImage();
+            $this->db->insert($this->_table, $this);
+        } else show_404('illegal execution');
     }
 
     public function update()
     {
-        $cur_date = new DateTime();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $cur_date = new DateTime();
 
-        $post = $this->input->post();
-        $this->kategori = $post["kategori"];
-        $this->judul = $post["judul"];
-        $this->slug = $this->create_slug($this->judul);
-        $this->tanggal_rilis = $cur_date->format('Y-m-d');
-        $this->isi_artikel = $post["isi_artikel"];
-        $this->penulis = "John Doe";
+            $post = $this->input->post();
+            $this->kategori = $post["kategori"];
+            $this->judul = $post["judul"];
+            $this->slug = $this->create_slug($this->judul);
+            $this->tanggal_rilis = $cur_date->format('Y-m-d');
+            $this->isi_artikel = $post["isi_artikel"];
+            $this->penulis = "John Doe";
 
-        if (!empty($_FILES["thumbnail"]["name"])) {
-            $this->thumbnail = $this->_uploadImage();
-        } else {
-            $this->thumbnail = $post["old_image"];
-        }
+            if (!empty($_FILES["thumbnail"]["name"])) {
+                $this->thumbnail = $this->_uploadImage();
+            } else {
+                $this->thumbnail = $post["old_image"];
+            }
 
-        $this->db->update($this->_table, $this, array('id' => $post['id']));
+            $this->db->update($this->_table, $this, array('id' => $post['id']));
+        } else show_404('illegal execution');
     }
 
     public function delete($id)

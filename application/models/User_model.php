@@ -48,32 +48,36 @@ class User_model extends CI_Model
 
     public function save()
     {
-        $post = $this->input->post();
-        $this->username = $post["username"];
-        $this->email = $post["email"];
-        $this->password = md5($post["password"]);
-        $this->nama_lengkap = $post["nama_lengkap"];
-        $this->status = $post["status"];
-        $this->Image = $this->_uploadImage();
-        $this->db->insert($this->_table, $this);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = $this->input->post();
+            $this->username = $post["username"];
+            $this->email = $post["email"];
+            $this->password = md5($post["password"]);
+            $this->nama_lengkap = $post["nama_lengkap"];
+            $this->status = $post["status"];
+            $this->Image = $this->_uploadImage();
+            $this->db->insert($this->_table, $this);
+        } else show_404('illegal execution');
     }
 
     public function update()
     {
-        $post = $this->input->post();
-        $this->username = $post["username"];
-        $this->email = $post["email"];
-        $this->password = md5($post["password"]);
-        $this->nama_lengkap = $post["nama_lengkap"];
-        $this->status = $post["status"];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = $this->input->post();
+            $this->username = $post["username"];
+            $this->email = $post["email"];
+            $this->password = md5($post["password"]);
+            $this->nama_lengkap = $post["nama_lengkap"];
+            $this->status = $post["status"];
 
-        if (!empty($_FILES["Image"]["name"])) {
-            $this->Image = $this->_uploadImage();
-        } else {
-            $this->Image = $post["old_image"];
-        }
+            if (!empty($_FILES["Image"]["name"])) {
+                $this->Image = $this->_uploadImage();
+            } else {
+                $this->Image = $post["old_image"];
+            }
 
-        $this->db->update($this->_table, $this, array('username' => $post['username']));
+            $this->db->update($this->_table, $this, array('username' => $post['username']));
+        } else show_404('illegal execution');
     }
 
     public function delete($id)

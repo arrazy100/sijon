@@ -83,75 +83,79 @@ class Register_model extends CI_Model
 
     public function save()
     {
-        $post = $this->input->post();
-        $this->first_name = $post["first_name"];
-        $this->last_name = $post["last_name"];
-        $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->username = $post["username"];
-        $this->email = $post["email"];
-        $this->password = md5($post["password"]);
-        $this->sekolah = $post["sekolah"];
-        $this->jurusan_pertama = $post["jurusan_pertama"];
-        $this->jurusan_kedua = $post["jurusan_kedua"];
-        $this->kampus_pertama = $post["kampus_pertama"];
-        $this->kampus_kedua = $post["kampus_kedua"];
-        $this->db->insert($this->_table, $this);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = $this->input->post();
+            $this->first_name = $post["first_name"];
+            $this->last_name = $post["last_name"];
+            $this->jenis_kelamin = $post["jenis_kelamin"];
+            $this->username = $post["username"];
+            $this->email = $post["email"];
+            $this->password = md5($post["password"]);
+            $this->sekolah = $post["sekolah"];
+            $this->jurusan_pertama = $post["jurusan_pertama"];
+            $this->jurusan_kedua = $post["jurusan_kedua"];
+            $this->kampus_pertama = $post["kampus_pertama"];
+            $this->kampus_kedua = $post["kampus_kedua"];
+            $this->db->insert($this->_table, $this);
 
-        $user = array(
-            'email' => $this->email,
-            'username' => $this->username,
-            'nama_lengkap' => $this->first_name.' '.$this->last_name,
-            'password' => $this->password,
-            'status' => 'user',
-            'Image' => $this->_uploadImage()
-        );
-        $this->db->insert('user', $user);
+            $user = array(
+                'email' => $this->email,
+                'username' => $this->username,
+                'nama_lengkap' => $this->first_name.' '.$this->last_name,
+                'password' => $this->password,
+                'status' => 'user',
+                'Image' => $this->_uploadImage()
+            );
+            $this->db->insert('user', $user);
+        } else show_404('illegal execution');
     }
 
     public function update($username)
     {
-        $post = $this->input->post();
-        $this->username = $username;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $post = $this->input->post();
+            $this->username = $username;
 
-        $pertama = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_pertama='".$post["jurusan_pertama"]."'");
-        if (empty($pertama->result())) {
-            $this->skor_pertama = 0;
-        } else {
-            $this->skor_pertama = $pertama->result()[0]->skor_pertama;
-        }
+            $pertama = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_pertama='".$post["jurusan_pertama"]."'");
+            if (empty($pertama->result())) {
+                $this->skor_pertama = 0;
+            } else {
+                $this->skor_pertama = $pertama->result()[0]->skor_pertama;
+            }
 
-        $kedua = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_kedua='".$post["jurusan_kedua"]."'");
-        if (empty($kedua->result())) {
-            $this->skor_kedua = 0;
-        } else {
-            $this->skor_kedua = $kedua->result()[0]->skor_kedua;
-        }
+            $kedua = $this->db->query("SELECT * FROM profil WHERE username='".$username."'"."AND jurusan_kedua='".$post["jurusan_kedua"]."'");
+            if (empty($kedua->result())) {
+                $this->skor_kedua = 0;
+            } else {
+                $this->skor_kedua = $kedua->result()[0]->skor_kedua;
+            }
 
-        $up = array(
-            'jurusan_pertama' => $post['jurusan_pertama'],
-            'jurusan_kedua' => $post['jurusan_kedua'],
-            'kampus_pertama' => $post['kampus_pertama'],
-            'kampus_kedua' => $post['kampus_kedua'],
-            'skor_pertama' => $this->skor_pertama,
-            'skor_kedua' => $this->skor_kedua,
-            'bio' => $post['bio']
-        );
+            $up = array(
+                'jurusan_pertama' => $post['jurusan_pertama'],
+                'jurusan_kedua' => $post['jurusan_kedua'],
+                'kampus_pertama' => $post['kampus_pertama'],
+                'kampus_kedua' => $post['kampus_kedua'],
+                'skor_pertama' => $this->skor_pertama,
+                'skor_kedua' => $this->skor_kedua,
+                'bio' => $post['bio']
+            );
 
-        $this->db->update($this->_table, $up, array('username' => $username));
+            $this->db->update($this->_table, $up, array('username' => $username));
 
-        $new_gambar = "";
-        if (!empty($_FILES["gambar"]["name"])) {
-            $new_gambar = $this->_uploadImage();
-        } else {
-            $new_gambar = $post["old_image"];
-        }
+            $new_gambar = "";
+            if (!empty($_FILES["gambar"]["name"])) {
+                $new_gambar = $this->_uploadImage();
+            } else {
+                $new_gambar = $post["old_image"];
+            }
 
-        $user = array(
-            'email' => $post['email'],
-            'Image' => $new_gambar
-        );
+            $user = array(
+                'email' => $post['email'],
+                'Image' => $new_gambar
+            );
 
-        $this->db->update('user', $user, array('username' => $username));
+            $this->db->update('user', $user, array('username' => $username));
+        } else show_404('illegal execution');
     }
 
     private function _uploadImage()

@@ -32,7 +32,7 @@
 		<!-- Jumbotron Header -->
 		<div style="width: 100%; padding: 20px; height: 400px; background-image: url(<?php echo base_url('img/kampus/BG_Cari_kampus.jpg') ?>);"
 			class="text-white">
-			<h1 class="display-5" style="padding-top: 150px;">Cari Kampus</h1>
+			<h1 class="display-5" style="padding-top: 100px;">Cari Kampus</h1>
 			<p class="lead">Temukan kampus kamu disini. Pastikan memilih kampus berdasarkan informasi yang relevan.</p>
 			<form method="get" action="<?php echo site_url('explorasi_kampus') ?>">
 				<div class="form-inline">

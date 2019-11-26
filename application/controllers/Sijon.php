@@ -75,6 +75,7 @@ class Sijon extends CI_Controller {
 
 	public function explorasi_soal()
 	{
+		if (!isset($_GET['soal'])) show_404();
 		$status = $this->session->userdata('status');
 		$username = $this->session->userdata('username');
         if ($status != 'user') {
@@ -82,6 +83,7 @@ class Sijon extends CI_Controller {
 		}
 		$soal = explode(',', $_GET['soal']);
 		$data['soal'] = $this->db->query("SELECT * FROM explorasi WHERE id='".$soal[0]."'")->result();
+		if (!$data['soal']) show_404();
 		$data['id_skor'] = $soal[1];
 		$this->load->view('explorasi_soal', $data);
 	}

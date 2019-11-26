@@ -27,6 +27,7 @@ class Chat extends CI_Controller
             $data['penerima'] = $this->db->query("SELECT Image FROM user WHERE username='$send_to'")->result();
         } else {
             $data['chat'] = "";
+            $_GET['with'] = "";
         }
         $data['pengirim'] = $this->db->query("SELECT Image FROM user WHERE username='$username'")->result();
         $data['contact'] = $this->db->query("SELECT * FROM user WHERE status='admin'")->result();

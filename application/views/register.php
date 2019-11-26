@@ -41,7 +41,7 @@
 								<input type="file" name="gambar" id="gambar-avatar" class="inputfile"
 									onchange="readURL(this)" />
 								<label for="gambar-avatar">
-									<i class="zmdi zmdi-camera"></i>
+									<i class="fa fa-camera"></i>
 									<span>Pilih Foto</span>
 								</label>
 							</div>
@@ -136,7 +136,7 @@
 								<option value="">Pilih jurusan pertama</option>
 								<?php foreach($jurusan as $j) { ?>
 									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
-								<? } ?>
+								<?php } ?>
 							</select>
 							<div class="invalid-feedback">
 								<?php echo form_error('jurusan_pertama') ?>
@@ -149,7 +149,7 @@
 								<option value="">Pilih jurusan kedua</option>
 								<?php foreach($jurusan as $j) { ?>
 									<option value="<?php echo $j->jurusan ?>"><?php echo $j->jurusan ?></option>
-								<? } ?>
+								<?php } ?>
 							</select>
 							<div class="invalid-feedback">
 								<?php echo form_error('jurusan_kedua') ?>

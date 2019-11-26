@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('css/soal.css')?>">
 </head>
 
-<body data-spy="scroll" data-target="#navbar" class="static-layout">
+<body data-spy="scroll" data-target="#navbar" class="static-layout" style="background-image: url(<?php echo base_url('img/background.jpg') ?>)">
 	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
 		<?php $this->load->view("sijon/header.php") ?>
 	</nav>

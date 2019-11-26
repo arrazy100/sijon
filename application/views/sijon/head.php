@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Sijon</title>
 <meta name="description" content="Roxy">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
 <!-- External CSS -->
 <link rel="stylesheet" href="<?php echo base_url('vendor/bootstrap/bootstrap.min.css')?>">

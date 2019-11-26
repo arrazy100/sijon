@@ -83,7 +83,7 @@
 										<option value="<?php echo $j->jurusan ?>"
 											<?php if ($profil[0]->jurusan_pertama == $j->jurusan) { ?> selected
 											<?php } ?>><?php echo $j->jurusan ?></option>
-										<? } ?>
+										<?php } ?>
 									</select>
 									<div class="invalid-feedback">
 										<?php echo form_error('jurusan_pertama') ?>
@@ -98,7 +98,7 @@
 										<option value="<?php echo $j->jurusan ?>"
 											<?php if ($profil[0]->jurusan_kedua == $j->jurusan) { ?> selected
 											<?php } ?>><?php echo $j->jurusan ?></option>
-										<? } ?>
+										<?php } ?>
 									</select>
 									<div class="invalid-feedback">
 										<?php echo form_error('jurusan_kedua') ?>
@@ -133,7 +133,9 @@
 					<h2 class="mb-4">
 						Bio
 					</h2>
-					<textarea id="bio" name="bio" oninput="show_btn()"><?php echo $profil[0]->bio ?></textarea><br>
+					<div class="form-group">
+					    <textarea class="form-control" id="bio" name="bio" oninput="show_btn()"><?php echo $profil[0]->bio ?></textarea><br>
+					</div>
 					</form>
 					<h2 class="mb-4">
 						Pilihan Jurusanku

@@ -50,52 +50,48 @@
 					<div class="card shadow-lg">
 						<div class="card-body">
 							<ul class="list-group">
-								<table>
+								<style>td { padding: 15px; }</style>
+								<table border="1">
 									<tr>
 										<td>
-											<li class="list-group-item list-group-item-lightS"><b>Nama</b></li>
+											<b>Nama</b>
 										</td>
 										<td>
-											<li class="list-group-item list-group-item-lightS">
-												<?php echo $kampus[0]->Nama ?></li>
+												<?php echo $kampus[0]->Nama ?>
 										</td>
-									</tr>
+
 									<tr>
 										<td>
-											<li class="list-group-item list-group-item-lightS"><b>Akreditasi</b></li>
+											<b>Akreditasi</b>
 										</td>
 										<td>
-											<li class="list-group-item list-group-item-lightS">
-												<?php echo $kampus[0]->akreditas ?></li>
+												<?php echo $kampus[0]->akreditas ?>
 										</td>
-									</tr>
+
 									<tr>
 										<td>
-											<li class="list-group-item list-group-item-lightS"><b>Status</b></li>
+											<b>Status</b>
 										</td>
 										<td>
-											<li class="list-group-item list-group-item-lightS">
-												<?php echo $kampus[0]->status ?></li>
+												<?php echo $kampus[0]->status ?>
 										</td>
-									</tr>
+
 									<tr>
 										<td>
-											<li class="list-group-item py-4 list-group-item-lightS"><b>Alamat</b></li>
+											<b>Alamat</b>
 										</td>
 										<td>
-											<li class="list-group-item list-group-item-lightS">
-												<?php echo $kampus[0]->Alamat ?></li>
+												<?php echo $kampus[0]->Alamat ?>
 										</td>
-									</tr>
+
 									<tr>
 										<td>
-											<li class="list-group-item list-group-item-lightS"><b>Tahun</b></li>
+											<b>Tahun</b>
 										</td>
 										<td>
-											<li class="list-group-item list-group-item-lightS">
-												<?php echo $kampus[0]->tahun ?></li>
+												<?php echo $kampus[0]->tahun ?>
 										</td>
-									</tr>
+
 								</table>
 							</ul>
 						</div>

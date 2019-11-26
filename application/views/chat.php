@@ -20,51 +20,56 @@
 
 	<div class="container" style="margin-top: 150px; margin-bottom: 0px;">
 		<div class="messaging">
-			<div class="inbox_msg">
-				<div class="inbox_people">
+			<div class="inbox_msg row">
+				<div class="inbox_people col-lg-6 col-md-6 col-sm-12 col-12">
 					<div class="headind_srch">
 						<div class="recent_heading">
 							<h4>List Contact</h4>
 						</div>
 					</div>
 					<div class="inbox_chat">
-                        <?php if ($this->session->userdata('status') == 'user') { ?>
-                        <?php foreach($contact as $c) { ?>
-                        <div class="chat_list <?php if (isset($_GET['with']) && $_GET['with'] == $c->username) { ?> active_chat <?php } ?>" id="<?php echo $c->username ?>"
-                            onclick="pilihKontak(this)">
-							<div class="chat_people">
-								<div class="chat_img"> <img src="<?php echo base_url('upload/user/'.$c->Image) ?>"
-										alt=""> </div>
-								<div class="chat_ib">
-									<h5><?php echo $c->nama_lengkap ?></h5>
-									<p>Admin</p>
+						<?php if ($this->session->userdata('status') == 'user') { ?>
+						<?php foreach($contact as $c) { ?>
+						<a href="#" id="<?php echo $c->username ?>" onclick="pilihKontak(this)">
+							<div
+								class="chat_list <?php if (isset($_GET['with']) && $_GET['with'] == $c->username) { ?> active_chat <?php } ?>">
+								<div class="chat_people">
+									<div class="chat_img"> <img src="<?php echo base_url('upload/user/'.$c->Image) ?>"
+											alt=""> </div>
+									<div class="chat_ib">
+										<h5><?php echo $c->nama_lengkap ?></h5>
+										<p>Admin</p>
+									</div>
 								</div>
-                            </div>
-                        </div>
-                        <?php } } else { ?>
-                        <?php foreach($user as $u) { ?>
-                        <div class="chat_list <?php if (isset($_GET['with']) && $_GET['with'] == $u->username) { ?> active_chat <?php } ?>" id="<?php echo $u->username ?>"
-                            onclick="pilihKontak(this)">
-							<div class="chat_people">
-								<div class="chat_img"> <img src="<?php echo base_url('upload/user/'.$u->Image) ?>"
-										alt=""> </div>
-								<div class="chat_ib">
-									<h5><?php echo $u->nama_lengkap ?></h5>
-									<p>User</p>
+							</div>
+						</a>
+						<?php } } else { ?>
+						<?php foreach($user as $u) { ?>
+						<a href="#" id="<?php echo $u->username ?>" onclick="pilihKontak(this)">
+							<div
+								class="chat_list <?php if (isset($_GET['with']) && $_GET['with'] == $u->username) { ?> active_chat <?php } ?>">
+								<div class="chat_people">
+									<div class="chat_img"> <img src="<?php echo base_url('upload/user/'.$u->Image) ?>"
+											alt=""> </div>
+									<div class="chat_ib">
+										<h5><?php echo $u->nama_lengkap ?></h5>
+										<p>User</p>
+									</div>
 								</div>
-                            </div>
-                        </div>
-                        <?php } } ?>
+							</div>
+						</a>
+						<?php } } ?>
 					</div>
 				</div>
-				<div class="mesgs">
+				<div class="mesgs col-lg-6 col-md-6 col-sm-12 col-12">
 					<?php if (!empty($_GET['with'])) { ?>
 					<div class="msg_history" id="isi_chat">
 						<?php foreach($chat as $c) { ?>
 						<?php if ($c->username != $this->session->userdata('username')) { ?>
 						<div class="incoming_msg">
-							<div class="incoming_msg_img"> <img src="<?php echo base_url('upload/user/'.$penerima[0]->Image) ?>"
-									alt="" class="round-image"> </div>
+							<div class="incoming_msg_img"> <img
+									src="<?php echo base_url('upload/user/'.$penerima[0]->Image) ?>" alt=""
+									class="round-image"> </div>
 							<div class="received_msg">
 								<div class="received_withd_msg">
 									<p><?php echo $c->message ?></p>
@@ -74,21 +79,22 @@
 						</div>
 						<?php } else { ?>
 						<div class="outgoing_msg">
-                            <div class="outcoming_msg_img"> <img src="<?php echo base_url('upload/user/'.$pengirim[0]->Image) ?>"
-									alt="sunil" class="round-image">
-						    </div>
+							<div class="outcoming_msg_img"> <img
+									src="<?php echo base_url('upload/user/'.$pengirim[0]->Image) ?>" alt="sunil"
+									class="round-image">
+							</div>
 							<div class="sent_msg">
 								<p><?php echo $c->message ?></p>
 								<span class="time_date"> <?php echo $c->date ?></span>
 							</div>
-                        </div>
+						</div>
 						<?php } } ?>
 					</div>
 					<div class="type_msg">
 						<form action="<?php echo site_url('chat/add/?with='.$_GET['with']) ?>" method="post">
 							<div class="input_msg_write">
-								<textarea name="message" id="message" style="display: block; width: 95%;" class="write_msg" placeholder="Type a message"
-									required></textarea>
+								<textarea name="message" id="message" style="display: block; width: 95%;"
+									class="write_msg" placeholder="Type a message" required></textarea>
 								<button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane"
 										aria-hidden="true"></i></button>
 							</div>
@@ -106,30 +112,33 @@
 
 	<?php $this->load->view('sijon/js') ?>
 	<script>
-        function pilihKontak(id) {
-            location.href = "?with=" + $(id).attr("id");
-        }
-        $('#message').each(function() {
-            this.setAttribute('style', 'height:' + (this.scrollHeight) + "px; overflow-y: hidden; width: 95%; resize: none;");
-        }).on('input', function() {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + "px";
-        });
-        $('.msg_history').scrollTop($('.msg_history')[0].scrollHeight);
+		function pilihKontak(id) {
+			location.href = "?with=" + $(id).attr("id");
+		}
+		$('#message').each(function () {
+			this.setAttribute('style', 'height:' + (this.scrollHeight) +
+				"px; overflow-y: hidden; width: 95%; resize: none;");
+		}).on('input', function () {
+			this.style.height = 'auto';
+			this.style.height = (this.scrollHeight) + "px";
+		});
+		$('.msg_history').scrollTop($('.msg_history')[0].scrollHeight);
 
-		$(document).ready(function() {
-			var interval = function() {
+		$(document).ready(function () {
+			var interval = function () {
 				$.ajax({
 					url: "<?php echo site_url('refresh_chat/?with='.$_GET['with']) ?>",
-            		cache: false,
-            		success: function (html) {
+					cache: false,
+					success: function (html) {
 						$("#isi_chat").empty();
-                		$("#isi_chat").append(html);
-            		}, Timeout: 2000
+						$("#isi_chat").append(html);
+					},
+					Timeout: 2000
 				});
 			}
 			setInterval(interval, 2000);
 		});
+
 	</script>
 </body>
 

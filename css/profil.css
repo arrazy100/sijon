@@ -27,7 +27,6 @@
 
 textarea {
     border: none;
-    width: 400px;
     overflow: auto;
     outline: none;
     resize: none;

@@ -4,6 +4,7 @@
 <head>
 	<?php $this->load->view('sijon/head.php') ?>
 	<link rel="stylesheet" href="<?php echo base_url('css/profil.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('css/navbar.css') ?>">
 </head>
 
 <body data-spy="scroll" data-target="#navbar" class="static-layout">

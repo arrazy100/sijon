@@ -3,6 +3,7 @@
 <head>
 	<?php $this->load->view('sijon/head') ?>
 	<link rel="stylesheet" href="<?php echo base_url('css/chat.css') ?>">
+	<link rel="stylesheet" href="<?php echo base_url('css/navbar.css') ?>">
 </head>
 
 <body data-spy="scroll" data-target="#navbar" class="static-layout">

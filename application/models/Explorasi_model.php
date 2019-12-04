@@ -51,17 +51,22 @@ class Explorasi_model extends CI_Model
                     if ($i == 0) {
                         $i++; continue;
                     }
-                    $this->id = $post['id'];
-                    $this->jurusan = $post['jurusan'];
-                    $this->nomor = $i;
-                    $this->soal = htmlentities($soal[0]);
-                    $this->jawaban_a = htmlentities($soal[1]);
-                    $this->jawaban_b = htmlentities($soal[2]);
-                    $this->jawaban_c = htmlentities($soal[3]);
-                    $this->jawaban_d = htmlentities($soal[4]);
-                    $this->poin = $soal[5];
-                    $this->db->insert($this->_table, $this);
-                    $i++;
+
+                    if (!empty($soal[0]) && !empty($soal[1]) && !empty($soal[2]) && !empty($soal[3]) && !empty($soal[4])) {
+                        $this->id = $post['id'];
+                        $this->jurusan = $post['jurusan'];
+                        $this->nomor = $i;
+                        $this->soal = htmlentities($soal[0]);
+                        $this->jawaban_a = htmlentities($soal[1]);
+                        $this->jawaban_b = htmlentities($soal[2]);
+                        $this->jawaban_c = htmlentities($soal[3]);
+                        $this->jawaban_d = htmlentities($soal[4]);
+                        $this->poin = $soal[5];
+                        $this->db->insert($this->_table, $this);
+                        $i++;
+                    } else {
+                        echo "Format excel salah";
+                    }
                 }
             } else {
                 echo SimpleXLSX::parseError();

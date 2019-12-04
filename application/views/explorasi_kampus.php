@@ -3,6 +3,7 @@
 
 <head>
 	<?php $this->load->view('sijon/head') ?>
+	<link rel="stylesheet" href="<?php echo base_url('css/navbar.css') ?>">
 </head>
 
 <body data-spy="scroll" data-target="#navbar" class="static-layout">
@@ -14,7 +15,7 @@
 		<?php $this->load->view('sijon/sidesearch') ?>
 	</div>
 
-	<nav id="header-navbar" class="navbar navbar-expand-lg py-4" style="background-color: rgba(0, 0, 0, 0.5);">
+	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
 		<?php $this->load->view('sijon/header') ?>
 	</nav>
 
@@ -30,8 +31,7 @@
 	<div>
 
 		<!-- Jumbotron Header -->
-		<div style="width: 100%; padding: 20px; height: 400px; background-image: url(<?php echo base_url('img/kampus/BG_Cari_kampus.jpg') ?>);"
-			class="text-white">
+		<div style="width: 100%; padding: 20px; height: 400px; color: black;">
 			<h1 class="display-5" style="padding-top: 100px;">Cari Kampus</h1>
 			<p class="lead">Temukan kampus kamu disini. Pastikan memilih kampus berdasarkan informasi yang relevan.</p>
 			<form method="get" action="<?php echo site_url('explorasi_kampus') ?>">

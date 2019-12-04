@@ -43,16 +43,6 @@
 						<article class="card-body">
 							<a href="<?php echo site_url('registers') ?>" class="float-right btn btn-outline-info">Sign up</a>
 							<h4 class="card-title mb-4 mt-1">Sign in</h4>
-							<p>
-								<a href="" class="btn btn-block btn-outline-info"> <i class="fab fa-twitter"></i>  
-									Login
-									via
-									Twitter</a>
-								<a href="" class="btn btn-block btn-outline-info"> <i class="fab fa-facebook-f"></i>
-									 
-									Login
-									via facebook</a>
-							</p>
 							<hr>
 							<form action="<?php echo site_url("login/proses_login")?>" method="post">
 								<div class="form-group">

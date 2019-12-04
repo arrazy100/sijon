@@ -51,6 +51,7 @@
 
 							<div class="form-group">
 								<label for="dokumen">Import Soal dari Excel*</label>
+								<br />Contoh dokumen excel yang valid <input type="button" class="btn btn-primary" onclick="location.href='<?php echo site_url('panduan') ?>'" value="Download" />
 								<input class="form-control-file <?php echo form_error('dokumen') ? 'is-invalid':'' ?>"
 									type="file" name="dokumen" accept=".xls, .xlsx" required="" />
 								<div class="invalid-feedback">

@@ -68,3 +68,4 @@ $route['register'] = 'registers';
 $route['admin'] = 'admin/overview';
 $route['chat'] = 'chat';
 $route['refresh_chat'] = 'chat/refresh_chat';
+$route['panduan'] = 'admin/explorasi/panduan';

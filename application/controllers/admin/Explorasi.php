@@ -10,6 +10,7 @@ class Explorasi extends CI_Controller
         $this->load->model("explorasi_model");
         $this->load->library('form_validation');
         $this->load->helper('text');
+        $this->load->helper('download');
 
         $status = $this->session->userdata('status');
         if ($status != 'admin') {
@@ -56,5 +57,9 @@ class Explorasi extends CI_Controller
         if ($this->explorasi_model->delete($id)) {
             redirect(site_url('admin/explorasi'));
         }
+    }
+
+    public function panduan() {
+        redirect(base_url().'panduan/TI.xlsx');
     }
 }

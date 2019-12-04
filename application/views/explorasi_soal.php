@@ -10,9 +10,10 @@
 
 	<!-- STYLE CSS -->
 	<link rel="stylesheet" href="<?php echo base_url('css/soal.css')?>">
+	<link rel="stylesheet" href="<?php echo base_url('css/navbar.css') ?>">
 </head>
 
-<body data-spy="scroll" data-target="#navbar" class="static-layout" style="background-image: url(<?php echo base_url('img/background.jpg') ?>)">
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
 	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
 		<?php $this->load->view("sijon/header.php") ?>
 	</nav>
@@ -27,8 +28,10 @@
 
 	<div class="wrapper" style="margin-top:100px; margin-bottom: 100px;">
 		<form id="hitung" method="post" action="<?php echo site_url('sijon/hitung_skor')?>?jurusan=<?php echo $id_skor ?>">
-			<h1 style="color: white; text-align: center">Soal Simulasi - Teknik Informatika</h1>
 			<div id="wizard">
+				<?php if(empty($soal)) { ?>
+				<h2>Soal simulasi masih belum tersedia untuk pilihan jurusan ini!</h2>
+				<?php } ?>
 				<?php foreach($soal as $s) { ?>
 				<!-- SECTION 1 -->
 				<h4></h4>

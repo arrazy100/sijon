@@ -20,7 +20,7 @@
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'blogs' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-blog"></i>
             <span>Blogs</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="blogDropdown">
@@ -31,7 +31,7 @@
     <li class="nav-item dropdown <?php echo $this->uri->segment(2) == 'explorasi' ? 'active': '' ?>">
         <a class="nav-link dropdown-toggle" href="#" id="explorasiDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            <i class="fas fa-fw fa-user"></i>
+            <i class="fas fa-fw fa-graduation-cap"></i>
             <span>Explorasi</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="explorasiDropdown">
